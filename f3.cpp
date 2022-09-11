@@ -20,22 +20,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//https://www.codewars.com/kata/5544c7a5cb454edb3c000047/train/cpp
+//https://www.codewars.com/kata/5592e3bd57b64d00f3000047/train/cpp
 
+Ы
 
-using namespace std;
-class Bouncingball
+#include <math.h>
+
+class ASum
 {
 public:
-    static int bouncingBall(double h, double bounce, double window) {
-        if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) {
-            return -1;
+    static long long findNb(long long m) {
+        long long n = 0;
+        while (m > 0) {
+            m -= pow(++n, 3);
         }
-        int count = 0;
-        while (h > window) {
-            h *= bounce;
-            count += 2;
-        }
-        return count - 1;
+        return m == 0 ? n : -1;
+
     }
 };
